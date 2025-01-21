@@ -17,6 +17,7 @@ use Awcodes\Curator\Components\Forms\CuratorPicker;
 use Filament\Forms\Components\Select;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
 
 class CategoryResource extends Resource
@@ -48,7 +49,7 @@ class CategoryResource extends Resource
                     ->maxLength(255)
                     ->readonly(),
                 TextInput::make('description')
-                    ->label('Description')
+                    ->label('Deskripsi')
                     ->required()
                     ->maxLength(255),
                 Select::make('category')
@@ -69,16 +70,16 @@ class CategoryResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('name')
+                    ->label('Nama')
                     ->searchable()
+                    ->description(fn(Category $record): string => Str::limit($record->description, 50))
                     ->sortable(),
                 TextColumn::make('slug')
+                    ->label('Slug')
                     ->searchable()
-                    ->sortable(),
-                TextColumn::make('description')
-                    ->searchable()
-                    ->limit(50)
                     ->sortable(),
                 TextColumn::make('category')
+                    ->label('Kategori')
                     ->searchable()
                     ->sortable(),
             ])

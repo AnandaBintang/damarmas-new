@@ -18,6 +18,7 @@ use Filament\Forms\Components\Section;
 use Awcodes\Curator\Components\Forms\CuratorPicker;
 use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Select;
+use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
@@ -90,7 +91,8 @@ class ProductResource extends Resource
                 TextColumn::make('name')
                     ->label('Nama')
                     ->searchable()
-                    ->description(fn(Product $record): string => $record->description)
+                    ->description(fn(Product $record): string => Str::limit($record->description, 50))
+
                     ->sortable(),
                 TextColumn::make('slug')
                     ->label('Slug')
