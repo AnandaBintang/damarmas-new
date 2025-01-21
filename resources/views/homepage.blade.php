@@ -77,52 +77,15 @@
             <div class="section-header d-flex flex-wrap align-items-center justify-content-between">
                 <h2 class="section-title">Produk Terbaru</h2>
                 <div class="btn-wrap">
-                    <a href="shop.html" class="d-flex align-items-center">Lihat Semua Produk <i
+                    <a href="{{ route('shop') }}" class="d-flex align-items-center">Lihat Semua Produk <i
                             class="icon icon icon-arrow-io"></i></a>
                 </div>
             </div>
             <div class="swiper product-swiper overflow-hidden">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="product-item">
-                            <a href="#" class="image-holder">
-                                <img src="images/products/instalasi-videotron.png" alt="Paket Instalasi"
-                                    class="product-image" />
-                            </a>
-                            <div class="product-detail">
-                                <h3 class="product-title">
-                                    <a href="#">Instalasi Videotron</a>
-                                </h3>
-                                <span class="item-price text-primary">Rp. 1.200.000</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="product-item">
-                            <a href="#" class="image-holder">
-                                <img src="images/products/neonbox.png" alt="Neon" class="product-image" />
-                            </a>
-                            <div class="product-detail">
-                                <h3 class="product-title">
-                                    <a href="#">Neonbox</a>
-                                </h3>
-                                <span class="item-price text-primary">Rp. 520.000</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="product-item">
-                            <a href="#" class="image-holder">
-                                <img src="images/products/running-text.png" alt="Running Text" class="product-image" />
-                            </a>
-                            <div class="product-detail">
-                                <h3 class="product-title">
-                                    <a href="#">Running Text</a>
-                                </h3>
-                                <span class="item-price text-primary">Rp. 240.000</span>
-                            </div>
-                        </div>
-                    </div>
+                    @foreach ($newestProducts as $product)
+                        <x-product-card :product="$product" />
+                    @endforeach
                 </div>
             </div>
             <div class="swiper-pagination"></div>

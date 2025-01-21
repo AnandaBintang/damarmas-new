@@ -24,43 +24,20 @@ class ProductController extends Controller
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(StoreProductRequest $request)
+    public function homepage()
     {
-        //
-    }
+        $newestProducts = Product::select('products.*', 'media.path as media_path')
+            ->leftJoin('product_media', 'products.id', '=', 'product_media.product_id')
+            ->leftJoin('media', 'product_media.path', '=', 'media.id')
+            ->whereRaw('product_media.id IS NULL OR product_media.id = (
+                    SELECT MIN(pm2.id)
+                    FROM product_media pm2
+                    WHERE pm2.product_id = products.id
+                )')
+            ->orderBy('products.created_at', 'desc')
+            ->take(6)
+            ->get();
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Product $product)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Product $product)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(UpdateProductRequest $request, Product $product)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Product $product)
-    {
-        //
+        return view('homepage', compact('newestProducts'));
     }
 }
