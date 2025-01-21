@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\ProductResource\Pages;
 use App\Filament\Resources\ProductResource\RelationManagers;
 use App\Models\Product;
+use Illuminate\Support\Facades\Auth;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -13,6 +14,9 @@ use Filament\Tables\Table;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\RichEditor;
+use Filament\Forms\Components\Section;
+use Awcodes\Curator\Components\Forms\CuratorPicker;
+use Filament\Forms\Components\Repeater;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
@@ -25,29 +29,48 @@ class ProductResource extends Resource
     public static function form(Form $form): Form
     {
         return $form
-            ->columns(3)
             ->schema([
-                TextInput::make('slug')
-                    ->label('Slug')
-                    ->required()
-                    ->maxLength(255)
-                    ->readonly(),
-                TextInput::make('name')
-                    ->label('Nama Produk')
-                    ->maxLength(255)
-                    ->required()
-                    ->reactive()
-                    ->debounce(500)
-                    ->afterStateUpdated(fn($state, callable $set) => $set('slug', strtolower(str_replace(' ', '-', $state)))),
-                TextInput::make('price')
-                    ->label('Harga Produk')
-                    ->numeric()
-                    ->required()
-                    ->prefix('Rp'),
-                RichEditor::make('description')
-                    ->label('Deskripsi Produk')
-                    ->columnSpanFull()
-                    ->required()
+                Section::make('Informasi Produk')
+                    ->columns(3)
+                    ->schema([
+                        TextInput::make('slug')
+                            ->label('Slug')
+                            ->required()
+                            ->maxLength(255)
+                            ->readonly(),
+                        TextInput::make('name')
+                            ->label('Nama Produk')
+                            ->maxLength(255)
+                            ->required()
+                            ->reactive()
+                            ->debounce(500)
+                            ->afterStateUpdated(fn($state, callable $set) => $set('slug', strtolower(str_replace(' ', '-', $state)))),
+                        TextInput::make('price')
+                            ->label('Harga Produk')
+                            ->numeric()
+                            ->required()
+                            ->prefix('Rp'),
+                        RichEditor::make('description')
+                            ->label('Deskripsi Produk')
+                            ->columnSpanFull()
+                            ->required()
+                    ]),
+
+                Section::make('Foto Produk')
+                    ->columns(1)
+                    ->schema([
+                        Repeater::make('media')
+                            ->relationship('media')
+                            ->schema([
+                                CuratorPicker::make('path')
+                                    ->directory('product-images/' . Auth::user()->id)
+                                    ->label('Gambar Produk')
+                                    ->acceptedFileTypes(['image/*'])
+                                    ->maxSize(3072),
+                            ])
+                            ->label('Daftar Gambar Produk')
+                            ->columnSpanFull(),
+                    ]),
             ]);
     }
 
