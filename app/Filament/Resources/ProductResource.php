@@ -104,7 +104,7 @@ class ProductResource extends Resource
                     ->sortable(),
                 TextColumn::make('price')
                     ->label('Harga')
-                    ->searchable()
+                    ->money('IDR', locale: 'id_ID')
                     ->sortable(),
             ])
             ->filters([
