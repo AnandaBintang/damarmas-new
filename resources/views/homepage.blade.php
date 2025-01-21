@@ -98,7 +98,7 @@
                 <div class="col-lg-7 col-md-12 left-content">
                     <div class="collection-item">
                         <div class="products-thumb">
-                            <img src="{{ asset('storage/category/Lighting.png') }}" alt="collection item"
+                            <img src="{{ asset('storage/category/default/Lighting.png') }}" alt="collection item"
                                 class="large-image image-rounded" />
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6 product-entry">
@@ -119,7 +119,7 @@
                 <div class="col-lg-5 col-md-12 right-content flex-wrap">
                     <div class="collection-item top-item">
                         <div class="products-thumb">
-                            <img src="{{ asset('storage/category/Advertising.png') }}" alt="collection item"
+                            <img src="{{ asset('storage/category/default/Advertising.png') }}" alt="collection item"
                                 class="small-image image-rounded" />
                         </div>
                         <div class="col-md-6 product-entry">
@@ -134,7 +134,7 @@
                     </div>
                     <div class="collection-item bottom-item">
                         <div class="products-thumb">
-                            <img src="{{ asset('storage/category/Runningtextt.png') }}" alt="collection item"
+                            <img src="{{ asset('storage/category/default/Runningtextt.png') }}" alt="collection item"
                                 class="small-image image-rounded" />
                         </div>
                         <div class="col-md-6 product-entry">
@@ -157,7 +157,7 @@
             <div class="product-collection">
                 <div class="left-content collection-item">
                     <div class="products-thumb">
-                        <img src="{{ asset('storage/category/Videotron.png') }}" alt="collection item"
+                        <img src="{{ asset('storage/category/default/Videotron.png') }}" alt="collection item"
                             class="large-image image-rounded" />
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6 product-entry">
