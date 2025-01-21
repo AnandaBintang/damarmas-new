@@ -84,7 +84,7 @@
             <div class="swiper product-swiper overflow-hidden">
                 <div class="swiper-wrapper">
                     @foreach ($newestProducts as $product)
-                        <x-product-card :product="$product" />
+                        <x-new-product-card :product="$product" />
                     @endforeach
                 </div>
             </div>
