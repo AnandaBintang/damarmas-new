@@ -17,6 +17,7 @@ use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Section;
 use Awcodes\Curator\Components\Forms\CuratorPicker;
 use Filament\Forms\Components\Repeater;
+use Filament\Forms\Components\Select;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
@@ -35,7 +36,7 @@ class ProductResource extends Resource
         return $form
             ->schema([
                 Section::make('Informasi Produk')
-                    ->columns(3)
+                    ->columns(2)
                     ->schema([
                         TextInput::make('slug')
                             ->label('Slug')
@@ -54,6 +55,10 @@ class ProductResource extends Resource
                             ->numeric()
                             ->required()
                             ->prefix('Rp'),
+                        Select::make('category_id')
+                            ->label('Kategori Produk')
+                            ->required()
+                            ->relationship(name: 'category', titleAttribute: 'name'),
                         RichEditor::make('description')
                             ->label('Deskripsi Produk')
                             ->columnSpanFull()
@@ -85,17 +90,18 @@ class ProductResource extends Resource
                 TextColumn::make('name')
                     ->label('Nama')
                     ->searchable()
+                    ->description(fn(Product $record): string => $record->description)
                     ->sortable(),
                 TextColumn::make('slug')
                     ->label('Slug')
                     ->searchable()
                     ->sortable(),
-                TextColumn::make('price')
-                    ->label('Harga')
+                TextColumn::make('category.name')
+                    ->label('Kategori')
                     ->searchable()
                     ->sortable(),
-                TextColumn::make('description')
-                    ->label('Deskripsi')
+                TextColumn::make('price')
+                    ->label('Harga')
                     ->searchable()
                     ->sortable(),
             ])
