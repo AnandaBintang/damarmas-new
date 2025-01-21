@@ -5,24 +5,21 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
 use App\Models\Product;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+    public function show($product)
     {
-        //
-    }
+        $product = Product::where('slug', $product)->orWhere('id', $product)->firstOrFail();
+        $product->webname = str_replace(' ', '%20', $product->name);
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
+        $productMedia = $product->media()->get()->map(function ($item) {
+            return DB::table('media')->where('id', $item->path)->first();
+        });
+
+        return view('shop._entry', compact('product', 'productMedia'));
     }
 
     public function homepage()

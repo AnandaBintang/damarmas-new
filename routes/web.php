@@ -12,11 +12,8 @@ Route::get('/about', function () {
 Route::get('/shop', [ProductController::class, 'shop'])->name('shop');
 Route::get('/shop/search', [ProductController::class, 'search'])->name('shop.search');
 Route::get('/shop/price', [ProductController::class, 'filterByPrice'])->name('shop.price');
+Route::get('/shop/{product}', [ProductController::class, 'show'])->name('product-detail');
 
 Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
-
-Route::get('/shop/product-detail', function () {
-    return view('product-detail');
-})->name('product-detail');
