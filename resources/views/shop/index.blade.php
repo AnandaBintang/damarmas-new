@@ -12,7 +12,7 @@
                     <h1 class="page-title">Toko</h1>
                     <div class="breadcrumbs">
                         <span class="item">
-                            <a href="index.html">Home /</a>
+                            <a href="{{ route('homepage') }}">Home /</a>
                         </span>
                         <span class="item">Toko</span>
                     </div>

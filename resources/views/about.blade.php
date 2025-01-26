@@ -9,7 +9,7 @@
                     <h1 class="page-title">Tentang Kami</h1>
                     <div class="breadcrumbs">
                         <span class="item">
-                            <a href="index.html">Beranda /</a>
+                            <a href="{{ route('homepage') }}">Beranda /</a>
                         </span>
                         <span class="item">Tentang Kami</span>
                     </div>
@@ -75,7 +75,7 @@
                                 28 Agustus 2023
                             </p>
                             <div class="btn-wrap">
-                                <a href="shop.html" class="btn btn-dark btn-medium d-flex align-items-center"
+                                <a href="{{ route('shop') }}" class="btn btn-dark btn-medium d-flex align-items-center"
                                     tabindex="0">Lihat Toko Kami<i class="icon icon-arrow-io"></i>
                                 </a>
                             </div>

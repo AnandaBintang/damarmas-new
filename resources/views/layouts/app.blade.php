@@ -144,16 +144,16 @@
                             <h5 class="widget-title">Damarmas</h5>
                             <ul class="menu-list list-unstyled">
                                 <li class="menu-item">
-                                    <a href="about.html">Tentang Kami</a>
+                                    <a href="{{ route('about') }}">Tentang Kami</a>
                                 </li>
                                 <li class="menu-item">
-                                    <a href="shop.html">Toko</a>
+                                    <a href="{{ route('shop') }}">Toko</a>
                                 </li>
                                 <li class="menu-item">
                                     <a href="#instagram">Dokumentasi & Portofolio</a>
                                 </li>
                                 <li class="menu-item">
-                                    <a href="contact.html">Kontak</a>
+                                    <a href="{{ route('contact') }}">Kontak</a>
                                 </li>
                             </ul>
                         </div>

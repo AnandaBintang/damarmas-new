@@ -12,7 +12,7 @@
                     <h1 class="page-title">Kontak Kami</h1>
                     <div class="breadcrumbs">
                         <span class="item">
-                            <a href="index.html">Beranda /</a>
+                            <a href="{{ route('homepage') }}">Beranda /</a>
                         </span>
                         <span class="item">Kontak</span>
                     </div>

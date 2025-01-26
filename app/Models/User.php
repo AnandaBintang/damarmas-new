@@ -6,6 +6,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Filament\Models\Contracts\FilamentUser;
+use Filament\Panel;
 
 class User extends Authenticatable
 {
@@ -45,4 +47,10 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    // If deploying to a domain, you can use this method to restrict access to the Filament admin panel.
+    // public function canAccessPanel(Panel $panel): bool
+    // {
+    //     return str_ends_with($this->email, '@damarmas.co.id') && $this->hasVerifiedEmail();
+    // }
 }

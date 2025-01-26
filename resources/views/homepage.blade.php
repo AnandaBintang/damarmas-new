@@ -30,7 +30,8 @@
                                         reparasi alat elektronik.
                                     </p>
                                     <div class="btn-wrap">
-                                        <a href="#" class="btn btn-outline-light btn-medium d-flex align-items-center"
+                                        <a href="{{ asset('pdf/catalog-profile.pdf') }}" target="_blank"
+                                            class="btn btn-outline-light btn-medium d-flex align-items-center"
                                             tabindex="0">Klik Disini <i class="icon icon-arrow-io"></i>
                                         </a>
                                     </div>
@@ -58,7 +59,7 @@
                                         preferensi anda
                                     </p>
                                     <div class="btn-wrap">
-                                        <a href="#"
+                                        <a href="{{ route('shop') }}"
                                             class="btn btn-light btn-light-arrow btn-medium d-flex align-items-center"
                                             tabindex="0">Lihat Produk <i class="icon icon-arrow-io"></i>
                                         </a>
@@ -109,7 +110,7 @@
                                 menyesuaikan kebutuhan dan preferensi anda.
                             </p>
                             <div class="btn-wrap">
-                                <a href="shop.html" class="d-flex align-items-center">Lihat Produk <i
+                                <a href="{{ route('shop') }}" class="d-flex align-items-center">Lihat Produk <i
                                         class="icon icon-arrow-io"></i>
                                 </a>
                             </div>
@@ -126,7 +127,7 @@
                             <div class="categories">Layanan</div>
                             <h3 class="item-title">Advertising.</h3>
                             <div class="btn-wrap">
-                                <a href="shop.html" class="d-flex align-items-center">Lihat Produk <i
+                                <a href="{{ route('shop') }}" class="d-flex align-items-center">Lihat Produk <i
                                         class="icon icon-arrow-io"></i>
                                 </a>
                             </div>
@@ -141,7 +142,7 @@
                             <div class="categories">Produk</div>
                             <h3 class="item-title">Running Text.</h3>
                             <div class="btn-wrap">
-                                <a href="shop.html" class="d-flex align-items-center">Lihat Produk <i
+                                <a href="{{ route('shop') }}" class="d-flex align-items-center">Lihat Produk <i
                                         class="icon icon-arrow-io"></i>
                                 </a>
                             </div>
@@ -168,7 +169,7 @@
                             menyesuaikan kebutuhan dan preferensi anda.
                         </p>
                         <div class="btn-wrap">
-                            <a href="shop.html" class="d-flex align-items-center">Lihat Produk <i
+                            <a href="{{ route('shop') }}" class="d-flex align-items-center">Lihat Produk <i
                                     class="icon icon-arrow-io"></i>
                             </a>
                         </div>
