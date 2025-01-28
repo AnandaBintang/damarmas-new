@@ -95,42 +95,14 @@
                 <h2 class="section-title">Dokumentasi & Portofolio</h2>
             </div>
             <div class="row d-flex flex-wrap justify-content-between">
-                <div class="col-lg-2 col-md-4 col-sm-6">
-                    <figure class="zoom-effect">
-                        <img src="{{ asset('storage/portfolio/Exhibition Archipelago Hotel Aston Banyuwangi.png') }}"
-                            alt="Exhibition Archipelago Hotel Aston Banyuwangi" class="insta-image" />
-                    </figure>
-                </div>
-                <div class="col-lg-2 col-md-4 col-sm-6">
-                    <figure class="zoom-effect">
-                        <img src="{{ asset('storage/portfolio/Instalasi Fix Videotron Jasamarga.png') }}"
-                            alt="Instalasi Fix Videotron Jasamarga" class="insta-image" />
-                    </figure>
-                </div>
-                <div class="col-lg-2 col-md-4 col-sm-6">
-                    <figure class="zoom-effect">
-                        <img src="{{ asset('storage/portfolio/Instalasi Letter Papaya Fresh Gallery.png') }}"
-                            alt="Instalasi Letter Papaya Fresh Gallery" class="insta-image" />
-                    </figure>
-                </div>
-                <div class="col-lg-2 col-md-4 col-sm-6">
-                    <figure class="zoom-effect">
-                        <img src="{{ asset('storage/portfolio/Maintenance Panel Deepsea.png') }}"
-                            alt="Maintenance Panel Deepsea" class="insta-image" />
-                    </figure>
-                </div>
-                <div class="col-lg-2 col-md-4 col-sm-6">
-                    <figure class="zoom-effect">
-                        <img src="{{ asset('storage/portfolio/Maintenance TV Wall Polrestabes Surabaya.png') }}"
-                            alt="Maintenance TV Wall Polrestabes Surabaya" class="insta-image" />
-                    </figure>
-                </div>
-                <div class="col-lg-2 col-md-4 col-sm-6">
-                    <figure class="zoom-effect">
-                        <img src="{{ asset('storage/portfolio/Pengadaan Alins Alongins Pusdikkav TA 2024.png') }}"
-                            alt="Pengadaan Alins Alongins Pusdikkav TA 2024" class="insta-image" />
-                    </figure>
-                </div>
+                @foreach ($portfolios as $item)
+                    <div class="col-lg-2 col-md-4 col-sm-6">
+                        <figure class="zoom-effect">
+                            <img src="{{ asset('storage/' . $item->media_path) }}" alt="{{ $item->title }}"
+                                class="insta-image" />
+                        </figure>
+                    </div>
+                @endforeach
             </div>
         </div>
     </section>

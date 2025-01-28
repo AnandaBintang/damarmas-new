@@ -92,7 +92,6 @@ class ProductResource extends Resource
                     ->label('Nama')
                     ->searchable()
                     ->description(fn(Product $record): string => Str::limit($record->description, 50))
-
                     ->sortable(),
                 TextColumn::make('slug')
                     ->label('Slug')

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
+use App\Models\Portfolio;
 use App\Models\Product;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
@@ -19,7 +20,13 @@ class ProductController extends Controller
             return DB::table('media')->where('id', $item->path)->first();
         });
 
-        return view('shop._entry', compact('product', 'productMedia'));
+        $portfolios = Portfolio::select('portfolios.*', 'media.directory as media_directory', 'media.path as media_path')
+            ->leftJoin('media', 'portfolios.path', '=', 'media.id')
+            ->orderBy('portfolios.created_at', 'desc')
+            ->take(6)
+            ->get();
+
+        return view('shop._entry', compact('product', 'productMedia', 'portfolios'));
     }
 
     public function homepage()
@@ -36,7 +43,13 @@ class ProductController extends Controller
             ->take(6)
             ->get();
 
-        return view('homepage', compact('newestProducts'));
+        $portfolios = Portfolio::select('portfolios.*', 'media.directory as media_directory', 'media.path as media_path')
+            ->leftJoin('media', 'portfolios.path', '=', 'media.id')
+            ->orderBy('portfolios.created_at', 'desc')
+            ->take(6)
+            ->get();
+
+        return view('homepage', compact('newestProducts', 'portfolios'));
     }
 
     public function shop()
@@ -69,7 +82,13 @@ class ProductController extends Controller
             }),
         ];
 
-        return view('shop.index', compact('products'));
+        $portfolios = Portfolio::select('portfolios.*', 'media.directory as media_directory', 'media.path as media_path')
+            ->leftJoin('media', 'portfolios.path', '=', 'media.id')
+            ->orderBy('portfolios.created_at', 'desc')
+            ->take(6)
+            ->get();
+
+        return view('shop.index', compact('products', 'portfolios'));
     }
 
     public function search(Request $request)
@@ -109,7 +128,13 @@ class ProductController extends Controller
             }),
         ];
 
-        return view('shop.index', compact('products'));
+        $portfolios = Portfolio::select('portfolios.*', 'media.directory as media_directory', 'media.path as media_path')
+            ->leftJoin('media', 'portfolios.path', '=', 'media.id')
+            ->orderBy('portfolios.created_at', 'desc')
+            ->take(6)
+            ->get();
+
+        return view('shop.index', compact('products', 'portfolios'));
     }
 
     public function filterByPrice(Request $request)
@@ -157,6 +182,12 @@ class ProductController extends Controller
             }),
         ];
 
-        return view('shop.index', compact('products'));
+        $portfolios = Portfolio::select('portfolios.*', 'media.directory as media_directory', 'media.path as media_path')
+            ->leftJoin('media', 'portfolios.path', '=', 'media.id')
+            ->orderBy('portfolios.created_at', 'desc')
+            ->take(6)
+            ->get();
+
+        return view('shop.index', compact('products'), compact('portfolios'));
     }
 }
