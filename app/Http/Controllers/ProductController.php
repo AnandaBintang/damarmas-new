@@ -6,6 +6,7 @@ use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
 use App\Models\Portfolio;
 use App\Models\Product;
+use App\Models\Category;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
@@ -43,13 +44,20 @@ class ProductController extends Controller
             ->take(6)
             ->get();
 
+        $categories = Category::select('categories.*', 'media.path as media_path')
+            ->leftJoin('media', 'categories.cover_path', '=', 'media.id')
+            ->orderBy('categories.created_at', 'desc')
+            ->get();
+
+        $categories = $categories->keyBy('name');
+
         $portfolios = Portfolio::select('portfolios.*', 'media.directory as media_directory', 'media.path as media_path')
             ->leftJoin('media', 'portfolios.path', '=', 'media.id')
             ->orderBy('portfolios.created_at', 'desc')
             ->take(6)
             ->get();
 
-        return view('homepage', compact('newestProducts', 'portfolios'));
+        return view('homepage', compact('newestProducts', 'categories', 'portfolios'));
     }
 
     public function shop()
