@@ -1,5 +1,4 @@
 @props(['product'])
-
 <div class="product-item col-lg-4 col-md-6 col-sm-6">
     <a href="{{ route('product-detail', $product->slug) }}" class="image-holder">
         <img src="{{ $product->media_path ? asset('storage/' . $product->media_path) : 'https://placehold.co/400x500' }}"

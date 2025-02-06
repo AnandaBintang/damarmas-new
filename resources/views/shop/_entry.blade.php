@@ -41,6 +41,8 @@
                 <div class="col-md-6">
                     <div class="product-info">
                         <h1 class="product-title">{{ $product->name }}</h1>
+                        <hr>
+                        <h5>Kategori : {{ $product->category_name }}</h5>
                         <p class="product-price">{{ toRupiah($product->price) }}</p>
                         <div class="product-description">
                             {!! $product->description !!}

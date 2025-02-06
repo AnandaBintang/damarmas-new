@@ -108,7 +108,7 @@
     </section>
 
     <footer id="footer">
-        <div class="container">
+        <div class="container padding-medium">
             <div class="footer-menu-list">
                 <div class="row d-flex flex-wrap justify-content-between">
                     <div class="col-lg-6 col-md-6 col-sm-6">
@@ -135,8 +135,7 @@
                             <h5 class="widget-title">Hubungi Kami</h5>
                             <p>
                                 Anda mempunyai pertanyaan? <br />
-                                <a href="mailto:damarmas.nusantara@gmail.com"
-                                    class="email">damarmas.nusantara@gmail.com</a>
+                                <a href="mailto:damarmas.corp@gmail.com" class="email">damarmas.corp@gmail.com</a>
                             </p>
                             <p>
                                 <strong><a
@@ -147,7 +146,7 @@
                         <div class="social-links">
                             <ul class="d-flex list-unstyled">
                                 <li>
-                                    <a href="#">
+                                    <a href="https://www.instagram.com/damarmas.ns/" target="_blank">
                                         <i class="icon icon-instagram"></i>
                                     </a>
                                 </li>

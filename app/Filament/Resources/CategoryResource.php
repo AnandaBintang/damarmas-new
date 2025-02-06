@@ -61,7 +61,8 @@ class CategoryResource extends Resource
                     ->directory('category/' . Auth::user()->id)
                     ->label('Cover Kategori')
                     ->acceptedFileTypes(['image/*'])
-                    ->maxSize(6144),
+                    ->maxSize(3072)
+                    ->columnSpanFull(),
             ]);
     }
 
@@ -91,9 +92,9 @@ class CategoryResource extends Resource
                 Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
-                ]),
+                // Tables\Actions\BulkActionGroup::make([
+                //     Tables\Actions\DeleteBulkAction::make(),
+                // ]),
             ]);
     }
 

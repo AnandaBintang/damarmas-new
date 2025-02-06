@@ -1678,6 +1678,10 @@ blockquote cite {
     left: 3.5em;
 }
 
+#header {
+    background-color: var(--dark-color);
+}
+
 @keyframes animation {
     0%,
     80%,
@@ -1957,7 +1961,7 @@ blockquote cite {
     color: #191919;
 }
 .stellarnav li a {
-    color: var(--dark-color);
+    color: var(--light-color);
     font-weight: 500;
 }
 .stellarnav li.has-sub > a:after {
@@ -2403,6 +2407,10 @@ i.icon.icon-arrow-io {
     color: var(--primary-color);
 }
 
+.tabs li.active a {
+    color: var(--primary-color);
+}
+
 @media screen and (max-width: 991px) {
     #selling-products .tabs {
         flex-wrap: unset;
@@ -2620,13 +2628,26 @@ a.blog-categories:hover {
 
 /*----- Footer Section
 --------------------------------------------------------------*/
+#footer {
+    background-color: #000;
+}
+
 #footer .footer-menu {
     margin-right: 50px;
+}
+.footer-menu .widget-title {
+    color: var(--light-color);
 }
 .footer-menu ul.menu-list a {
     color: var(--accent-color);
 }
 .footer-menu ul.menu-list a:hover {
+    color: var(--primary-color);
+}
+.footer-menu a {
+    color: var(--accent-color);
+}
+.footer-menu a:hover {
     color: var(--primary-color);
 }
 .footer-menu a.email {
@@ -2636,6 +2657,12 @@ a.blog-categories:hover {
 }
 .social-links li {
     padding-right: 20px;
+}
+.social-links li a {
+    color: var(--accent-color);
+}
+.social-links li a:hover {
+    color: var(--primary-color);
 }
 
 /*----- Footer Bottom Section

@@ -65,37 +65,21 @@
                 <section id="selling-products" class="col-md-9 product-store">
                     <div class="container">
                         <ul class="tabs list-unstyled">
-                            <li data-tab-target="#all" class="active tab">Semua Produk</li>
-                            <li data-tab-target="#videotron" class="tab">Videotron</li>
-                            <li data-tab-target="#lighting" class="tab">Lighting</li>
-                            <li data-tab-target="#advertising" class="tab">Advertising</li>
-                            <li data-tab-target="#runningtext" class="tab">Running Text</li>
+                            <li class="{{ request()->is('shop/category/all') ? 'active' : '' }} tab"><a
+                                    href="{{ route('category', 'all') }}">Semua Produk</a></li>
+                            <li class="{{ request()->is('shop/category/videotron') ? 'active' : '' }} tab"><a
+                                    href="{{ route('category', 'videotron') }}">Videotron</a></li>
+                            <li class="{{ request()->is('shop/category/lighting') ? 'active' : '' }} tab"><a
+                                    href="{{ route('category', 'lighting') }}">Lighting</a></li>
+                            <li class="{{ request()->is('shop/category/advertising') ? 'active' : '' }} tab"><a
+                                    href="{{ route('category', 'advertising') }}">Advertising</a></li>
+                            <li class="{{ request()->is('shop/category/running-text') ? 'active' : '' }} tab"><a
+                                    href="{{ route('category', 'running-text') }}">Running Text</a></li>
                         </ul>
                         <div class="tab-content">
                             <div id="all" data-tab-content class="active">
                                 <div class="row d-flex flex-wrap">
-                                    @foreach ($products['all'] as $item)
-                                        <x-product-card :product="$item" />
-                                    @endforeach
-                                </div>
-                            </div>
-                            <div id="lighting" data-tab-content>
-                                <div class="row d-flex flex-wrap">
-                                    @foreach ($products['lighting'] as $item)
-                                        <x-product-card :product="$item" />
-                                    @endforeach
-                                </div>
-                            </div>
-                            <div id="runningtext" data-tab-content>
-                                <div class="row d-flex flex-wrap">
-                                    @foreach ($products['running-text'] as $item)
-                                        <x-product-card :product="$item" />
-                                    @endforeach
-                                </div>
-                            </div>
-                            <div id="videotron" data-tab-content>
-                                <div class="row d-flex flex-wrap">
-                                    @foreach ($products['videotron'] as $item)
+                                    @foreach ($products as $item)
                                         <x-product-card :product="$item" />
                                     @endforeach
                                 </div>
@@ -103,25 +87,25 @@
                         </div>
                         <nav class="navigation paging-navigation text-center padding-medium" role="navigation">
                             <div class="pagination loop-pagination d-flex justify-content-center">
-                                @if ($products['all']->onFirstPage())
+                                @if ($products->onFirstPage())
                                     <span class="pagination-arrow d-flex align-items-center disabled">
                                         <i class="icon icon-arrow-left"></i>
                                     </span>
                                 @else
-                                    <a href="{{ $products['all']->previousPageUrl() }}"
+                                    <a href="{{ $products->previousPageUrl() }}"
                                         class="pagination-arrow d-flex align-items-center">
                                         <i class="icon icon-arrow-left"></i>
                                     </a>
                                 @endif
-                                @foreach ($products['all']->getUrlRange(1, $products['all']->lastPage()) as $page => $url)
-                                    @if ($page == $products['all']->currentPage())
+                                @foreach ($products->getUrlRange(1, $products->lastPage()) as $page => $url)
+                                    @if ($page == $products->currentPage())
                                         <span aria-current="page" class="page-numbers current">{{ $page }}</span>
                                     @else
                                         <a href="{{ $url }}" class="page-numbers">{{ $page }}</a>
                                     @endif
                                 @endforeach
-                                @if ($products['all']->hasMorePages())
-                                    <a href="{{ $products['all']->nextPageUrl() }}"
+                                @if ($products->hasMorePages())
+                                    <a href="{{ $products->nextPageUrl() }}"
                                         class="pagination-arrow d-flex align-items-center">
                                         <i class="icon icon-arrow-right"></i>
                                     </a>

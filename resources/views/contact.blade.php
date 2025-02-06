@@ -38,16 +38,20 @@
                             </p>
                             <ul class="list-unstyled list-icon">
                                 <li>
-                                    <a
-                                        href="https://api.whatsapp.com/send?phone=6281226090061&amp;text=Saya%20membutuhkan%20info%20lebih%20lanjut%20tentang%20barang%20yang%20ada%20di%20damarmas.co.id%20.%20Tolong%20dibantu%20ya!"><i
-                                            class="icon icon-phone"></i>+62 812 2609 0061</a>
+                                    <a href="https://api.whatsapp.com/send?phone=6281226090061&amp;text=Saya%20membutuhkan%20info%20lebih%20lanjut%20tentang%20barang%20yang%20ada%20di%20damarmas.co.id%20.%20Tolong%20dibantu%20ya!"
+                                        target="_blank"><i class="icon icon-phone"></i>+62 812 2609 0061</a>
                                 </li>
                                 <li>
-                                    <a href="mailto:damarmas.nusantara@gmail.com"><i
-                                            class="icon icon-mail"></i>damarmas.nusantara@gmail.com</a>
+                                    <a href="https://api.whatsapp.com/send?phone=628113120999&amp;text=Saya%20membutuhkan%20info%20lebih%20lanjut%20tentang%20barang%20yang%20ada%20di%20damarmas.co.id%20.%20Tolong%20dibantu%20ya!"
+                                        target="_blank"><i class="icon icon-phone"></i>+62 811-3120-999</a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="icon icon-map-pin"></i>Pasegan Asri B1 No.5,
+                                    <a href="mailto:damarmas.corp@gmail.com"><i
+                                            class="icon icon-mail"></i>damarmas.corp@gmail.com</a>
+                                </li>
+                                <li>
+                                    <a href="https://maps.app.goo.gl/Tq85CPp3yS6WzoUt7" target="_blank"><i
+                                            class="icon icon-map-pin"></i>Pasegan Asri B1 No.5,
                                         Area Sawah, Kloposepuluh, Kec. Sukodono, Kabupaten
                                         Sidoarjo, Jawa Timur, Indonesia</a>
                                 </li>
@@ -56,10 +60,8 @@
                         <div class="social-links">
                             <h3>Sosial Media</h3>
                             <ul class="d-flex list-unstyled">
-                                <li><a href="#" class="icon icon-facebook"></a></li>
-                                <li><a href="#" class="icon icon-twitter"></a></li>
-                                <li><a href="#" class="icon icon-instagram"></a></li>
-                                <li><a href="#" class="icon icon-youtube-play"></a></li>
+                                <li><a href="https://www.instagram.com/damarmas.ns/" target="_blank"
+                                        class="icon icon-instagram"></a></li>
                             </ul>
                         </div>
                     </div>
@@ -69,7 +71,7 @@
                         <div class="section-header">
                             <h2 class="section-title">Kirim pesan kepada kami</h2>
                         </div>
-                        <form name="contactform" action="contact.php" method="post" class="contact-form">
+                        <form name="contactform" action="" method="post" class="contact-form">
                             <div class="form-item">
                                 <input type="text" minlength="2" name="name" placeholder="Name"
                                     class="u-full-width bg-light" required />
