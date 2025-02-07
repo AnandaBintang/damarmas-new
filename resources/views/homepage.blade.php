@@ -93,6 +93,32 @@
         </div>
     </section>
 
+    <section class="shoppify-section-banner">
+        <div class="container">
+            <div class="product-collection">
+                <div class="left-content collection-item">
+                    <div class="products-thumb">
+                        <img src="{{ $categories['Videotron']['media_path'] ? asset('storage/' . $categories['Videotron']['media_path']) : asset('storage/category/default/Videotron.png') }}"
+                            alt="{{ $categories['Videotron']['name'] }}" class="large-image image-rounded" />
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 product-entry">
+                        <div class="categories">Produk</div>
+                        <h3 class="item-title">Videotron.</h3>
+                        <p>
+                            Damarmas menyediakan berbagai macam produk Videotron yang dapat
+                            menyesuaikan kebutuhan dan preferensi anda.
+                        </p>
+                        <div class="btn-wrap">
+                            <a href="{{ route('shop') }}" class="d-flex align-items-center">Lihat Produk <i
+                                    class="icon icon-arrow-io"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="latest-collection">
         <div class="container">
             <div class="product-collection row">
@@ -146,32 +172,6 @@
                                         class="icon icon-arrow-io"></i>
                                 </a>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="shoppify-section-banner">
-        <div class="container">
-            <div class="product-collection">
-                <div class="left-content collection-item">
-                    <div class="products-thumb">
-                        <img src="{{ $categories['Videotron']['media_path'] ? asset('storage/' . $categories['Videotron']['media_path']) : asset('storage/category/default/Videotron.png') }}"
-                            alt="{{ $categories['Videotron']['name'] }}" class="large-image image-rounded" />
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6 product-entry">
-                        <div class="categories">Produk</div>
-                        <h3 class="item-title">Videotron.</h3>
-                        <p>
-                            Damarmas menyediakan berbagai macam produk Videotron yang dapat
-                            menyesuaikan kebutuhan dan preferensi anda.
-                        </p>
-                        <div class="btn-wrap">
-                            <a href="{{ route('shop') }}" class="d-flex align-items-center">Lihat Produk <i
-                                    class="icon icon-arrow-io"></i>
-                            </a>
                         </div>
                     </div>
                 </div>

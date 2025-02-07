@@ -16,7 +16,7 @@
     <meta name="description" content="" />
     <link rel="stylesheet" type="text/css" href="{{ asset('css/normalize.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('plugins/icomoon/icomoon.css') }}" />
-    <link rel="shortcut icon" href="icon/favicon.ico" type="image/x-icon" />
+    {{-- <link rel="icon" href="icon/favicon.ico" sizes="32x32" type="image/x-icon"> --}}
     <link rel="stylesheet" type="text/css" media="all"
         href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="{{ asset('css/vendor.css') }}" />
@@ -141,6 +141,11 @@
                                 <strong><a
                                         href="https://api.whatsapp.com/send?phone=6281226090061&amp;text=Saya%20membutuhkan%20info%20lebih%20lanjut%20tentang%20barang%20yang%20ada%20di%20damarmas.co.id%20.%20Tolong%20dibantu%20ya!"
                                         target="_blank">+62 812 2609 0061</a></strong>
+                            </p>
+                            <p>
+                                <strong><a
+                                        href="https://api.whatsapp.com/send?phone=628113120999&amp;text=Saya%20membutuhkan%20info%20lebih%20lanjut%20tentang%20barang%20yang%20ada%20di%20damarmas.co.id%20.%20Tolong%20dibantu%20ya!"
+                                        target="_blank">+62 811 3120 999</a></strong>
                             </p>
                         </div>
                         <div class="social-links">
